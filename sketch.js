@@ -1,15 +1,15 @@
 var player, worm, wormgroup,score=0,edges
 
 function preload() {
-spaceImage=loadImage("./img/space.jfif")
+spaceImage=loadImage("./img/Space.jpg")
 spaceship=loadImage("./img/spaceship.png")
 rock=loadImage("./img/rock.png")
 }
 
 
 function setup() {
-  createCanvas(800, 800);
-  bg=createSprite(400,400,800,800)
+  createCanvas(1920,1080);
+  bg=createSprite(400,400,900,900)
   player= createSprite( 700,700, 50,50)
   player.addImage(spaceship)
   player.scale=0.3
@@ -19,9 +19,10 @@ function setup() {
 }
 
 function draw() {
-  background("green");
+  background("black");
   bg.addImage(spaceImage);
-  bg.scale=5
+  
+  bg.scale=1.5
   stroke('white')
   noFill()
   ellipse(400,400,150,250)
@@ -38,9 +39,9 @@ function draw() {
     }
   }
   noStroke();
-  fill("Blue")
+  fill("White")
   textSize(30)
-  text("Score="+score,400,100)
+  text("Score="+score,100,100)
   scored()
 }
   
@@ -49,7 +50,7 @@ function draw() {
 function worm1(){
   
   if(frameCount%30==0){
-    worm=createSprite(random(250,650),random(250,650),random(20,50),5)
+    worm=createSprite(random(550,650),random(550,650),random(20,50),5)
     worm.addImage(rock)
     worm.scale=0.5
     worm.shapeColor="white"
